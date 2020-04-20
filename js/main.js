@@ -78,7 +78,38 @@ $(document).ready(function() {
                 if ($('.bxslider').length) {
                     bx_slider();
                 }
-            });
+    if ($(".fancybox-button").size() > 0) {
+        $(".fancybox-button").fancybox({
+
+            groupAttr: 'data-rel',
+            prevEffect: true,
+            nextEffect: true,
+            fitToView: false,
+            beforeShow: function () {
+                this.width = 800;
+                this.height = 600;
+            },
+            closeBtn: true,
+            helpers: {
+                title: {
+                    type: 'inside'
+                }
+            }
+        });
+    }
+    //$('.bxslider').show();
+    $('.gallery .slider').bxSlider({
+        minSlides: 3,
+        maxSlides: 5,
+        slideWidth: 200,
+        slideMargin: 10,
+        moveSlides: 1,
+        auto: true,
+        pager: false,
+        responsive: true,
+        controls:true
+    });
+});
 $(window).resize(function() {
     dinamicMenu();
     customTooltip();
@@ -363,7 +394,8 @@ function indentationCheck(innerItemLeft, innerItemTop, arrowPosition, halfToolti
                         slideWidth: 220,
                         slideMargin: 7,
                         moveSlides: 1,
-                        pager: false
+                        pager: false,
+                        controls:false
                     });
                 }
             }

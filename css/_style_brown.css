@@ -5765,6 +5765,9 @@ form.orange h3 { color: #eb661c !important; }
     font-weight: normal;
     src: local('GothamPro-MediumItalic'), url('../fonts/gotham/GothamProMediumItalic.woff') format('woff');
 }
+.font-10{
+    font-size: 10px;
+}
 
 body{
     font-family: 'Gotham Pro';
@@ -5780,7 +5783,7 @@ body{
     background: #00000014;
 }
 div.collapse.navbar-collapse.main-menu-item{
-    justify-content: center !important;
+    justify-content: flex-end !important;
     display: flex!important;
     padding-bottom: 10px;
 }
@@ -5791,16 +5794,46 @@ div.collapse.navbar-collapse.main-menu-item{
     }
 }
 .main-menu .main-menu-item ul li .nav-link {
-    color: #fff;
+    width:100%;
+    color: #eee;
     font-size: 15px;
-    padding: 2px 23px;
+    padding: 2px 10px;
     text-transform: capitalize;
     line-height: 12px;
     font-weight: 400;
     border-right:solid 1px #d8d8d8;
     border-radius: 0;
 }
-
+.main-menu .main-menu-item ul li .nav-link.no-border{
+    border:none;
+}
+.main-menu .main-menu-item ul li .nav-link:hover{
+    color:white;
+    font-weight: bold;
+}
+.dropdown .dropdown-menu {
+    transition: all 0.5s;
+    background-color: #2222228c;
+    margin-top:10px !important;
+    width:200px;
+}
+.dropdown .dropdown-menu .dropdown-item {
+    font-size: 14px;
+    padding: 8px 20px !important;
+    color: #eee !important;
+    text-transform: capitalize;
+    float: left;
+    line-height: 15px;
+}
+.dropdown .dropdown-menu .dropdown-item:hover{
+    color:#fff;
+    font-weight: bold;
+}
+.lang-item .dropdown-menu{
+    min-width: 0;
+    width: 78px;
+    left: -10px;
+}
 .banner-part{
     position: relative;
     overflow: hidden;
@@ -5809,7 +5842,194 @@ div.collapse.navbar-collapse.main-menu-item{
     background-size: cover;
     background-position: center;
 }
+.banner-part h1{
+    padding-top:15%;
+}
+.align-items-center{
+    -ms-flex-align: center !important;
+    align-items: center !important;
+}
+.justify-content-center{
+    -ms-flex-pack: center !important;
+    justify-content: center !important;
+}
+.d-flex{
+    display: flex!important;
+}
+.text-white{
+    color:white!important;
+}
+.text-bold{
+    font-weight: bold;
+}
+.theme-button{
+    background: #65310f;
+    color: white;
+    display: block;
+    text-align: center;
+}
+.theme-button:hover{
+    color: white;
+}
+.divider{
+    width:70px;
+    height: 1px;
+    background: #3a3a3a40;
+    display: block;
+    margin:0 auto;
+    margin-top:15px;
+    margin-bottom: 25px;
+}
+.section-title{
+    color:#65310f;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-size: 32px;
+}
+.gallery{
+    padding:30px 20px 25px 20px;
+}
+.gallery .bx-wrapper .bx-controls-direction a{
+    position: absolute;
+    outline: 0;
+    width: 11px;
+    height: 17px;
+    z-index: 9;
+    text-indent: -9999px;
+    border-radius: 50px;
+}
+.gallery .bx-wrapper .bx-controls-direction a:focus{
+    color: #f1f1f1;
+}
+.gallery .bx-wrapper .bx-controls-direction .bx-prev {
+    left: -30px;
+    top: 60%;
+    background: url(../img/magnificat/slider/left.png) no-repeat;
+}
+.gallery .bx-wrapper .bx-controls-direction .bx-next {
+    right: -30px;
+    top: 60%;
+    background: url(../img/magnificat/slider/right.png) no-repeat;
+    transform: none;
+}
+.bg-f1{
+    background: #f1f1f1;
+}
+.btn-large{
+    margin: 0 auto;
+    max-width: 200px;
+    font-size: 20px;
+    border-radius: 20px;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.btn-normal{
+    font-size: 13px;
+    padding:10px 20px;
+    border-radius: 15px;
+    max-width: 120px;
+    margin-right: 15px;
+    cursor: pointer;
+}
+.orange-button{
+    background: #e05530;
+    color: white;
+    display: block;
+    text-align: center;
+}
+.orange-button:hover{
+    color:white;
+}
+.btn-center{
+    margin:0 auto;
+    max-width: 200px;
+}
+.float-left{
+    float:left;
+}
+.slider-f1 .bx-wrapper .bx-viewport{
+    background: #f1f1f1;
+}
+.wid-100{
+    width:100%;
+}
+.uppercase{
+    text-transform: uppercase;
+}
+.pad-right-45{
+    padding-right: 45px;
+}
+.mar-bot-25{
+    margin-bottom: 25px;
+}
+.video-control{
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    left: 45%;
+    top: 45%;
+    cursor: pointer;
+}
+.play-control{
+    background-image: url(../img/magnificat/icons/play_video.png);
+}
+.pause-control{
+    background-image: url(../img/magnificat/icons/pause_video.png);
+}
+.contact-us{
+    height: 200px;
+    overflow: hidden;
+    align-items: center;
+    background: url('../img/magnificat/service/01.png');
+    background-size:cover;
+}
+.contact-title{
+    width: 100%;
+    text-align: center;
+    font-size: 40px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    display: block;
+    color: white;
+    font-weight: 600;
+    padding-top: 80px;
+    letter-spacing: 5px;
+}
+.font-30{
+    font-size: 30px;
+}
+.font-20{
+    font-size: 20px;
+}
+.pad-bot-100{
+    padding-bottom: 100px;
+}
+.theme-footer{
+    background: #65310f;
+    color:white;
+}
 
-
-
-
+.footer-title{
+    border-bottom: solid 2px #7c5033;
+    padding:10px 0;
+    font-size: 18px;
+}
+.pad-40{
+    padding:40px;
+}
+.social-icon{
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-radius: 50%;
+    border: solid 1px #774a2c;
+}
+.pad-left-0{
+    padding-left: 0;
+}
+.mar-right-10{
+    margin-right: 10px;
+}
