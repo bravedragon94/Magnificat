@@ -109,6 +109,21 @@ $(document).ready(function() {
         responsive: true,
         controls:true
     });
+
+    $('.open-btn').on('click', function(){
+        $(this).css('display', 'none');
+        $('.close-btn').css('display', 'block');
+        $('.main-menu-item').slideDown();
+
+    });
+    $('.close-btn').on('click', function(){
+        $(this).css('display', 'none');
+        $('.open-btn').css('display', 'block');
+        $('.main-menu-item').slideUp();
+    });
+
+
+
 });
 $(window).resize(function() {
     dinamicMenu();
@@ -118,7 +133,11 @@ $(window).resize(function() {
         bx_slider();
     }
 });
-
+function scrollDown(obj){
+    $(obj).animate({scrollTop:0});
+    var v_top = $(obj).offset().top;
+    $('body').animate({top:$('body').offset().top - v_top});
+}
 function customTooltip() {
     $('[data-target="tooltip"]').hover(
         function() {
