@@ -5786,6 +5786,7 @@ div.collapse.navbar-collapse.main-menu-item{
     justify-content: flex-end !important;
     display: flex;
     padding-bottom: 10px;
+    padding-right: 0;
 }
 
 .main-menu .main-menu-item ul li .nav-link {
@@ -6044,8 +6045,17 @@ a, p, h4, h5{
         -ms-flex-direction: row;
         flex-direction: row;
     }
+    .navbar-collapse.collapse {
+        display: block;
+        height: auto!important;
+        padding-bottom: 0;
+        overflow: visible!important;
+        width: auto;
+        margin-top: 40px;
+    }
 }
 @media screen and (max-width: 1023px){
+
     .navbar-brand{
         position: absolute;
         width: 100%;
@@ -6063,6 +6073,29 @@ a, p, h4, h5{
         padding-top: 100px;
         background: #fbfbfb;
         z-index: 1;
+    }
+    div.navbar-collapse.collapse.lang-menu{
+        position: absolute;
+        width:50%;
+        left:50%;
+        display: block;
+    }
+    .lang-menu .navbar-nav{
+        float: right;
+        border: none;
+        margin-top: 30px;
+    }
+    .lang-menu .lang-item a{
+        padding: 20px 20px 0 20px;
+        border: none;
+    }
+    .lang-menu .navbar-nav .open .dropdown-menu{
+        width: 75px;
+        margin-top: 0!important;
+    }
+    .lang-menu .dropdown .dropdown-menu .dropdown-item{
+        background: #2222228c;
+        color:white!important;
     }
     .main-menu-item .navbar-nav{
         width: 100%;

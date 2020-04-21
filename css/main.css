@@ -12583,9 +12583,8 @@ section.widget-49 .list-insurance .one-insurance::after {
     .navbar-toggle {
         display:none
     }
-
     .navbar-collapse.collapse {
-        display: block!important;
+        display: block;
         height: auto!important;
         padding-bottom: 0;
         overflow: visible!important
