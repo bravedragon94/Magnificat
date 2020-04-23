@@ -207,6 +207,11 @@ body{
 .mar-y-50{margin-top: 50px; margin-bottom: 50px;}
 
 /*----------Align Elements--------------*/
+.container{
+    max-width: 1200px;
+}
+
+
 .align-items-center{
     -ms-flex-align: center !important;
     align-items: center !important;
@@ -620,11 +625,13 @@ a, p, h4, h5{
     border: solid 1px #65310f;
     color:#65310f;
 }
+.popup-panel{
+    height: 100%;
+    bottom: -82%;
+}
 @media screen and (min-width: 1200px){
     .popup-panel{
-        height: 360px;
         padding-top: 15px;
-        bottom: -293px;
     }
     .popup-panel p{
         padding-bottom: 40px;
@@ -635,9 +642,16 @@ a, p, h4, h5{
     }
 }
 @media screen and (max-width: 1200px){
-    .popup-panel{
-        height: 280px;
-        bottom: -230px;
+    .popup-panel p{
+        padding-top: 4%;
+        padding-bottom: 4%;
+        word-break: keep-all;
+    }
+    .popup-panel .btn-normal{
+        margin-top:10%;
+    }
+    .container{
+        width:100%;
     }
 }
 @media screen and (min-width: 1024px) {
@@ -781,38 +795,34 @@ a, p, h4, h5{
         height: 30px;
         font-size: 12px;
     }
-    .popup-panel{
-        bottom: -218px;
-    }
+
     .popup-panel .btn-normal{
-        margin-top: -480px;
-        margin-left: 175px;
+        float: right;
     }
     .popup-panel p{
-        padding-bottom: 20px;
+        padding-top: 4.5%;
+        padding-bottom: 7%;
+    }
+    .popup-panel div{
+        position: absolute;
+        top: -82%;
     }
 }
 @media screen and (max-width: 767px){
     .popup-panel{
-        bottom: -218px;
+        width: calc(100% - 30px);
     }
-    .popup-panel .btn-normal{
-        margin-top: -480px;
-        margin-left: 175px;
-    }
+
     .popup-panel p{
-        padding-bottom: 20px;
+        padding-top: 2%;
+        padding-bottom: 2%;
     }
 }
 @media screen and (max-width: 550px){
-    .popup-panel{
-        bottom: -218px;
-    }
-    .popup-panel .btn-normal{
-        margin-top: -480px;
-        margin-left: 175px;
-    }
+
+
     .popup-panel p{
-        padding-bottom: 20px;
+        padding-top: 3%;
+        padding-bottom: 8%;
     }
 }
