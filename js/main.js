@@ -86,8 +86,8 @@ $(document).ready(function() {
             nextEffect: true,
             fitToView: false,
             beforeShow: function () {
-                this.width = 800;
-                this.height = 600;
+                this.width = $(window).width() * 0.8;
+                this.height = $(window).width() * 0.6;
             },
             closeBtn: true,
             helpers: {
@@ -97,18 +97,41 @@ $(document).ready(function() {
             }
         });
     }
-    //$('.bxslider').show();
-    $('.gallery .slider').bxSlider({
-        minSlides: 3,
-        maxSlides: 5,
-        slideWidth: 200,
-        slideMargin: 10,
-        moveSlides: 1,
-        auto: true,
-        pager: false,
-        responsive: true,
-        controls:true
-    });
+    /*/$('.bxslider').show();
+    if ($(window).width() <= 550) {
+        $('.slider').bxSlider({
+            pager: false,
+            maxSlides: 1,
+            moveSliders:1,
+            slideWidth:300
+        });
+    } else */
+    if ($(window).width() <= 767) {
+        $('.slider').bxSlider({
+            pager: false,
+            maxSlides: 1
+        });
+    } else if ($(window).width() <= 1024) {
+        $('.slider').bxSlider({
+            minSlides: 2,
+            maxSlides: 2,
+            slideWidth: 250,
+            slideMargin: 7,
+            moveSlides: 1,
+            pager: false
+        });
+
+    } else {
+        $('.slider').bxSlider({
+            minSlides: 4,
+            maxSlides: 4,
+            slideWidth: 220,
+            slideMargin: 7,
+            moveSlides: 1,
+            pager: false,
+            controls:true
+        });
+    }
 
     $('.open-btn').on('click', function(){
         $(this).css('display', 'none');
@@ -133,11 +156,7 @@ $(window).resize(function() {
         bx_slider();
     }
 });
-function scrollDown(obj){
-    $(obj).animate({scrollTop:0});
-    var v_top = $(obj).offset().top;
-    $('body').animate({top:$('body').offset().top - v_top});
-}
+
 function customTooltip() {
     $('[data-target="tooltip"]').hover(
         function() {
@@ -430,4 +449,35 @@ $(document).ready(function() {
     $(this).css('display', 'none');
     $('.navbar-toggle .close').css('display', 'block');
   })
+
+    $('.play-control').on('click', function(){
+        $(this).css('display', 'none');
+        $('.pause-control').css('display', 'block');
+        $(this).parent().find('video').get(0).play();
+    });
+    $('.pause-control').on('click', function(){
+        $(this).css('display', 'none');
+        $('.play-control').css('display', 'block');
+        $(this).parent().find('video').get(0).pause();
+    });
+
+    $('.scroll-down').on('click', function(event){
+
+        // Prevent default anchor click behavior
+        event.preventDefault();
+
+        // Store hash
+
+
+        // Using jQuery's animate() method to add smooth page scroll
+        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+        $('html, body').animate({
+            scrollTop: $('#section-gallery').offset().top
+        }, 800, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = $('#section-gallery');
+        });
+
+    });
 });
